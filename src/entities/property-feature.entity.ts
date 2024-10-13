@@ -34,6 +34,6 @@ export class PropertyFeature {
   has_swimming_pool: boolean;
 
   @OneToOne(() => Property, (property) => property.property_feature)
-  @JoinColumn()
+  @JoinColumn({ name: 'property_id' })
   property: Property;
 }
