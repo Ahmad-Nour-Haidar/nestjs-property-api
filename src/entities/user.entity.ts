@@ -33,9 +33,6 @@ export class User {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @Column()
-  password: string;
-
   @OneToMany(() => Property, (property) => property.user)
   properties: Property[];
 
