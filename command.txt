@@ -71,3 +71,5 @@ yarn add -D @types passport-jwt
 npm i --save @nestjs/typeorm typeorm pg
 npm i @nestjs/mapped-types
 npm i typeorm-extension @faker-js/faker
+npm i bcrypt
+npm i -D @types/bcrypt

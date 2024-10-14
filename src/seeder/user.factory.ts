@@ -8,6 +8,7 @@ export const UserFactory = setSeederFactory(User, () => {
   user.last_name = faker.person.lastName();
   user.email = faker.internet.email();
   user.avatar_url = faker.image.avatar();
+  user.password = '1@Aaasas';
 
   return user;
 });
