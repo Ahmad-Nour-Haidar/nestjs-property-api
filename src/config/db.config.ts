@@ -1,10 +1,16 @@
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
-import * as path from 'node:path';
+import * as path from 'path';
+import { registerAs } from '@nestjs/config';
 
-export const pgConfig: PostgresConnectionOptions = {
-  url: 'postgresql://postgres:123@localhost:5432/nestjs-property-api?schema=public',
-  type: 'postgres',
-  port: 5432,
-  entities: [path.resolve(__dirname, '..') + '/**/*.entity{.ts,.js}'],
-  synchronize: true,
-};
+export default registerAs(
+  'dbconfig.dev',
+  (): PostgresConnectionOptions => ({
+    // Don't put this here, Instead put in the env file
+    url: process.env.DATABASE_URL,
+    type: 'postgres',
+    port: +process.env.PORT || 3000,
+    entities: [path.resolve(__dirname, '..') + '/**/*.entity{.ts,.js}'],
+
+    synchronize: true,
+  }),
+);
