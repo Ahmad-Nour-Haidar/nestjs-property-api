@@ -2,39 +2,30 @@ Here are the shortcuts for generating files using the NestJS CLI:
 
 
 # Generate a Module:
-
 nest g mo <module-name>
 
 # Generate a Controller:
-
 nest g co <controller-name>
 
 # Generate a Service:
-
 nest g s <service-name>
 
 # Generate a Middleware:
-
 nest g mi <middleware-name>
 
 # Generate a Pipe:
-
 nest g pi <pipe-name>
 
 # Generate a Guard:
-
 nest g gu <guard-name>
 
 # Generate an Interceptor:
-
 nest g in <interceptor-name>
 
 # Generate a Gateway (for WebSockets):
-
 nest g ga <gateway-name>
 
 # Generate a Resolver (for GraphQL):
-
 nest g r <resolver-name>
 
 🎉 Finish
@@ -73,3 +64,5 @@ npm i @nestjs/mapped-types
 npm i typeorm-extension @faker-js/faker
 npm i bcrypt
 npm i -D @types/bcrypt
+npm i --save @nestjs/passport passport passport-local
+npm i --save-dev @types/passport-local

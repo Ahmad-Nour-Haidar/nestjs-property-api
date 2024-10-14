@@ -5,6 +5,7 @@ import { PropertyModule } from './property/property.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 import dbConfigProduction from './config/db.config.production';
 import dbConfig from './config/db.config';
 
@@ -21,6 +22,7 @@ import dbConfig from './config/db.config';
     }),
     PropertyModule,
     UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

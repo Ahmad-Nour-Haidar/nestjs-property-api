@@ -24,6 +24,7 @@ export class User {
   @Column()
   last_name: string;
 
+  // nestjs typeorm unique column validation
   @Column()
   email: string;
 
