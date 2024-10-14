@@ -9,6 +9,7 @@ import { Property } from 'src/entities/property.entity';
 import { Repository } from 'typeorm';
 import { CreatePropertyDto } from './dto/create-property.dto';
 import { UpdatePropertyDto } from './dto/update-property.dto';
+import { PaginationDto } from './dto/pagination.dto';
 
 @Injectable()
 export class PropertyService {
@@ -16,8 +17,11 @@ export class PropertyService {
     @InjectRepository(Property) private propertyRepo: Repository<Property>,
   ) {}
 
-  async findAll() {
-    const properties = await this.propertyRepo.find();
+  async findAll(paginationDTO: PaginationDto) {
+    const properties = await this.propertyRepo.find({
+      skip: paginationDTO.skip(),
+      take: paginationDTO.take(),
+    });
 
     return {
       message: 'Properties retrieved successfully',
