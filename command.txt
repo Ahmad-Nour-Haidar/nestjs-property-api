@@ -66,3 +66,9 @@ npm i bcrypt
 npm i -D @types/bcrypt
 npm i --save @nestjs/passport passport passport-local
 npm i --save-dev @types/passport-local
+
+
+npm i --save @nestjs/jwt passport-jwt
+npm i --save-dev @types/passport-jwt
+
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"

@@ -14,10 +14,13 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @HttpCode(HttpStatus.OK)
-  // @UseGuards(AuthGuard('local'))
   @UseGuards(LocalAuthGuard)
   @Post('login')
   async login(@Request() req) {
-    return req.user;
+    const token = this.authService.login(req.user.id);
+    return {
+      id: req.user.id,
+      token,
+    };
   }
 }
