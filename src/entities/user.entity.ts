@@ -12,6 +12,7 @@ import {
 import { Property } from './property.entity';
 
 import * as bcrypt from 'bcrypt';
+import { Role } from '../auth/enums/role.enum';
 
 @Entity()
 export class User {
@@ -42,6 +43,13 @@ export class User {
 
   @Column({ nullable: true })
   hashedRefreshToken: string;
+
+  @Column({
+    type: 'enum',
+    enum: Role,
+    default: Role.USER,
+  })
+  role: Role;
 
   @OneToMany(() => Property, (property) => property.user)
   properties: Property[];
