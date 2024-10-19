@@ -40,6 +40,9 @@ export class User {
   @Column()
   password: string;
 
+  @Column({ nullable: true })
+  hashedRefreshToken: string;
+
   @OneToMany(() => Property, (property) => property.user)
   properties: Property[];
 
